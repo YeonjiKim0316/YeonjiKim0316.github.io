@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/post/hello.html</loc>
+    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
+  </url><url>
+    <loc>/post.html</loc>
+    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
+  </url><url>
     <loc>/categories.html</loc>
     <lastmod>2021-05-10T00:03:13+09:00</lastmod>
   </url><url>
@@ -15,12 +24,6 @@
     <lastmod>2021-05-10T00:03:13+09:00</lastmod>
   </url><url>
     <loc>/post/20210510.html</loc>
-    <lastmod>2021-05-10T00:03:13+09:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2021-05-10T00:03:13+09:00</lastmod>
-  </url><url>
-    <loc>/post.html</loc>
     <lastmod>2021-05-10T00:03:13+09:00</lastmod>
   </url><url>
     <loc>/tags.html</loc>
