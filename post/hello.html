@@ -6,24 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-	<meta property="og:title" content="Hello">
+	<meta property="og:title" content="Django: Function based views vs Class based views">
 	
 	
-	<meta property="og:title" content="Hello" />
-<meta property="og:description" content="" />
+	<meta name="keywords" content="Django,python,클래스기반뷰,기능기반뷰,Function based views,Class based views"><meta property="og:title" content="Django: Function based views vs Class based views" />
+<meta property="og:description" content="Function based views Class based views     a little more explicit and easier to understand a little more understanding of how to use these classes and built in methods    very powerful    Class based views   class based views are simply django views written as python classes for utilizing
+ Inheritance so we can write reusable code and make our application more DRY." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/hello.html" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-05-10T13:18:23&#43;09:00" />
 <meta property="article:modified_time" content="2021-05-10T13:18:23&#43;09:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hello"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Django: Function based views vs Class based views"/>
+<meta name="twitter:description" content="Function based views Class based views     a little more explicit and easier to understand a little more understanding of how to use these classes and built in methods    very powerful    Class based views   class based views are simply django views written as python classes for utilizing
+ Inheritance so we can write reusable code and make our application more DRY."/>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/all.css" />
-	<title>Hello | PaperDoll - Today I Learnt</title>
+	<title>Django: Function based views vs Class based views | PaperDoll - Today I Learnt</title>
 
 
 </head>
@@ -55,19 +57,225 @@
 		</div>
 		
 		<div class="matter">
-			<h1 class="title">Hello</h1>
+			<h1 class="title">Django: Function based views vs Class based views</h1>
 		</div>
 	</div>
 	<div class="markdown">
-		
+		<table>
+<thead>
+<tr>
+<th>Function based views</th>
+<th>Class based views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a little more explicit and easier to understand</td>
+<td>a little more understanding of how to use these classes and built in methods</td>
+</tr>
+<tr>
+<td></td>
+<td>very powerful</td>
+</tr>
+</tbody>
+</table>
+<h2 id="class-based-views">Class based views</h2>
+<ul>
+<li>
+<p>class based views are simply django views written as python classes for utilizing</p>
+<ul>
+<li>Inheritance so we can write reusable code and make our application more DRY. (Don&rsquo;t Repeat Yourself)</li>
+<li>Built in methods and views to eliminate redundancy for common use cases</li>
+<li>separate our code by http method types such as GET and POST.</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-function-based-view">Example: Function based view</h2>
+<p>Views.py</p>
+<pre><code>from django.shortcuts import render
+from .models import Product
+
+def productList(request):
+	products = Product.objects.all()
+	context = {'products/':products}
+	return render(request, 'base/product_list.html', context)
+
+</code></pre><p>Urls.py</p>
+<pre><code>from . import views 
+
+urlpatterns = [
+    path('products', views.productsList, name='products'),
+]
+</code></pre><h2 id="ex-class-based-view">Ex: Class based view</h2>
+<p>Views.py</p>
+<pre><code>from django.views.generic.list import ListView
+from .models import Product 
+
+class ProductList(ListView):
+	model = Product
+</code></pre><p>Urls.py</p>
+<pre><code>from . import views 
+
+urlpatterns = [
+    path('products', views.ProductList.as_view(), name='products'),
+]
+</code></pre><h2 id="the-as_view-method">The as_view() method</h2>
+<p>Because we are using a class based view, we need to add the “as_view” method for our url resolver. This is because the django url resolver cannot process a class but instead needs a function. To resolve this, we trigger the “as view” method from our “View” class which we inherited from and the “as view” method will call the correct view function depending on the method sent, therefore giving the url resolver a function.</p>
+<h2 id="understand-exactly-how-they-work-before-using-them">Understand exactly how they work before using them..</h2>
+<h3 id="1-separating-code-by-http-methods">1. Separating code by http methods</h3>
+<p>Ex: Function based view</p>
+<ul>
+<li>takes in every http method type</li>
+</ul>
+<p>Views.py</p>
+<pre><code>from django.shortcuts import render
+from .models import Product
+
+def productsList(request):
+	products = Product.objects.all()
+	
+	if request.method == 'POST':
+  		Product.object.create()
+	
+	context = {'products':products}
+	return render(request, 'base/product_list.html', context)
+</code></pre><p>Ex: Class based view</p>
+<ul>
+<li>we have a function for different methods : So if we send a GET request, then the “get” function gets triggered and any logic we have in there gets processed. If we send a “post” request then that request is sent to the “post” function for processing.</li>
+</ul>
+<p>Views.py</p>
+<pre><code>from django.views.generic.list import ListView
+from .models import Product 
+
+class ProductList(ListView):
+	model = Product
+
+	def post(self, request):
+		Product.object.create()
+</code></pre><h2 id="how-to-use">How to use</h2>
+<ul>
+<li>You can use them together in the same application as you see fit.</li>
+<li>you can actually slow down your progress by trying to force class based views into your application, therefore writing less efficient code.</li>
+<li>The &ldquo;View&rdquo; Class source code : <a href="https://github.com/django/django/blob/d828beb68f6b925217242e8f4faac2216f7c9c57/django/views/generic/base.py#L30">https://github.com/django/django/blob/d828beb68f6b925217242e8f4faac2216f7c9c57/django/views/generic/base.py#L30</a></li>
+</ul>
+<p>Views.py</p>
+<pre><code>from django.views.generic import View
+from .models import Product 
+
+class ProductList(View):
+
+    def get(self, request, *args, **kwargs): 
+        products = Product.objects.all()
+        context  = {'products':products}
+        return render(request, 'base/product_list.html', context)
+
+    def post(self, request, *args, **kwargs): 
+        pass
+</code></pre><p>Urls.py</p>
+<pre><code>from .views import ProductList
+
+urlpatterns = [
+    path('products', ProductList.as_view(), name='products'),
+]
+</code></pre><p>*args, *kwargs :
+*arguments(여러개 인자로 함수 호출 - 함수 내부에서는 튜플로 인식됨), **kwargs(키워드=특정값) 형태 - 딕셔너리 형태로 함수 내부로 전달됨
+참조 : <a href="https://www.dennisivy.com/post/django-class-based-views/">https://www.dennisivy.com/post/django-class-based-views/</a>
+<a href="https://brunch.co.kr/@princox/180">https://brunch.co.kr/@princox/180</a></p>
+
 	</div>
 	
 	
 	
 	
 	
+	
+	
+	<div class="tags">
+		<div class="taxosfloating_left">
+			<p>Categories</p>
+		</div>
+		<div class="termsfloating_right">
+			<p>
+			
+			
+			
+			<a href="../categories/til/"> til </a>
+			
+			
+			
+			
+			
+			</p>
+		</div>
+		<div class="clearit"></div>
+		
+		
+		
 		
 	
+	
+	
+	<div class="tags">
+		<div class="taxosfloating_left">
+			<p>Tags</p>
+		</div>
+		<div class="termsfloating_right">
+			<p>
+			
+			
+			
+			<a href="../tags/class-based-views/"> class-based-views </a>
+			
+			
+			
+			
+			
+			<a href="../tags/django/"> django </a>
+			
+			
+			
+			
+			
+			<a href="../tags/function-based-views/"> function-based-views </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a href="../tags/python/"> python </a>
+			
+			
+			
+			
+			
+			<a href="../tags/%ea%b8%b0%eb%8a%a5%ea%b8%b0%eb%b0%98%eb%b7%b0/"> 기능기반뷰 </a>
+			
+			
+			
+			
+			
+			<a href="../tags/%ed%81%b4%eb%9e%98%ec%8a%a4%ea%b8%b0%eb%b0%98%eb%b7%b0/"> 클래스기반뷰 </a>
+			
+			
+			
+			</p>
+		</div>
+		<div class="clearit"></div>
+		
+		
+		
 		
 		
 	</div></div>

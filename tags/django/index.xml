@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Django on PaperDoll - Today I Learnt</title>
+		<link>/tags/django.html</link>
+		<description>Recent content in Django on </description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<lastBuildDate>Mon, 10 May 2021 13:18:23 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/django/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Django: Function based views vs Class based views</title>
+			<link>/post/hello.html</link>
+			<pubDate>Mon, 10 May 2021 13:18:23 +0900</pubDate>
+			
+			<guid>/post/hello.html</guid>
+			<description>
+			
+				   Function based views Class based views     a little more explicit and easier to understand a little more understanding of how to use …
+			
+			</description>
+		</item>
+		
+	</channel>
+</rss>
