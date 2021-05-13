@@ -6,10 +6,70 @@
 		<description>Recent content in Tags on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Mon, 10 May 2021 13:18:23 +0900</lastBuildDate>
+		<lastBuildDate>Thu, 13 May 2021 19:55:24 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Django</title>
+			<link>/tags/django.html</link>
+			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
+			
+			<guid>/tags/django.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>django install</title>
+			<link>/tags/django-install.html</link>
+			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
+			
+			<guid>/tags/django-install.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>install django</title>
+			<link>/tags/install-django.html</link>
+			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
+			
+			<guid>/tags/install-django.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>python</title>
+			<link>/tags/python.html</link>
+			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
+			
+			<guid>/tags/python.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>장고인스톨</title>
+			<link>/tags/%EC%9E%A5%EA%B3%A0%EC%9D%B8%EC%8A%A4%ED%86%A8.html</link>
+			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
+			
+			<guid>/tags/%EC%9E%A5%EA%B3%A0%EC%9D%B8%EC%8A%A4%ED%86%A8.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
 		<item>
 			<title>Class based views</title>
 			<link>/tags/class-based-views.html</link>
@@ -23,35 +83,11 @@
 			</description>
 		</item>
 		<item>
-			<title>Django</title>
-			<link>/tags/django.html</link>
-			<pubDate>Mon, 10 May 2021 13:18:23 +0900</pubDate>
-			
-			<guid>/tags/django.html</guid>
-			<description>
-			
-				
-			
-			</description>
-		</item>
-		<item>
 			<title>Function based views</title>
 			<link>/tags/function-based-views.html</link>
 			<pubDate>Mon, 10 May 2021 13:18:23 +0900</pubDate>
 			
 			<guid>/tags/function-based-views.html</guid>
-			<description>
-			
-				
-			
-			</description>
-		</item>
-		<item>
-			<title>python</title>
-			<link>/tags/python.html</link>
-			<pubDate>Mon, 10 May 2021 13:18:23 +0900</pubDate>
-			
-			<guid>/tags/python.html</guid>
 			<description>
 			
 				

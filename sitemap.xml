@@ -3,30 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/categories.html</loc>
-    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
-  </url><url>
-    <loc>/tags/class-based-views.html</loc>
-    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
   </url><url>
     <loc>/tags/django.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/categories/django.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/tags/django-install.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/post/20210513.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/tags/install-django.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/post.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/tags/python.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/tags.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/tags/%EC%9E%A5%EA%B3%A0%EC%9D%B8%EC%8A%A4%ED%86%A8.html</loc>
+    <lastmod>2021-05-13T19:55:24+09:00</lastmod>
+  </url><url>
+    <loc>/tags/class-based-views.html</loc>
     <lastmod>2021-05-10T13:18:23+09:00</lastmod>
   </url><url>
     <loc>/post/20200511.html</loc>
     <lastmod>2021-05-10T13:18:23+09:00</lastmod>
   </url><url>
     <loc>/tags/function-based-views.html</loc>
-    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
-  </url><url>
-    <loc>/post.html</loc>
-    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
-  </url><url>
-    <loc>/tags/python.html</loc>
-    <lastmod>2021-05-10T13:18:23+09:00</lastmod>
-  </url><url>
-    <loc>/tags.html</loc>
     <lastmod>2021-05-10T13:18:23+09:00</lastmod>
   </url><url>
     <loc>/categories/til.html</loc>
