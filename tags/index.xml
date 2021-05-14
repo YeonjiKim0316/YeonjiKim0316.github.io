@@ -6,16 +6,88 @@
 		<description>Recent content in Tags on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Thu, 13 May 2021 19:55:24 +0900</lastBuildDate>
+		<lastBuildDate>Fri, 14 May 2021 09:18:42 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Django</title>
 			<link>/tags/django.html</link>
-			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
 			
 			<guid>/tags/django.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>django pollapp</title>
+			<link>/tags/django-pollapp.html</link>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
+			
+			<guid>/tags/django-pollapp.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>django tutorial</title>
+			<link>/tags/django-tutorial.html</link>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
+			
+			<guid>/tags/django-tutorial.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>pollapp</title>
+			<link>/tags/pollapp.html</link>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
+			
+			<guid>/tags/pollapp.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>python</title>
+			<link>/tags/python.html</link>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
+			
+			<guid>/tags/python.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>장고 튜토리얼</title>
+			<link>/tags/%EC%9E%A5%EA%B3%A0-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC.html</link>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
+			
+			<guid>/tags/%EC%9E%A5%EA%B3%A0-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC.html</guid>
+			<description>
+			
+				
+			
+			</description>
+		</item>
+		<item>
+			<title>장고 프로젝트 설치</title>
+			<link>/tags/%EC%9E%A5%EA%B3%A0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EC%B9%98.html</link>
+			<pubDate>Fri, 14 May 2021 09:18:42 +0900</pubDate>
+			
+			<guid>/tags/%EC%9E%A5%EA%B3%A0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EC%B9%98.html</guid>
 			<description>
 			
 				
@@ -40,18 +112,6 @@
 			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
 			
 			<guid>/tags/install-django.html</guid>
-			<description>
-			
-				
-			
-			</description>
-		</item>
-		<item>
-			<title>python</title>
-			<link>/tags/python.html</link>
-			<pubDate>Thu, 13 May 2021 19:55:24 +0900</pubDate>
-			
-			<guid>/tags/python.html</guid>
 			<description>
 			
 				
