@@ -153,95 +153,51 @@ CharField 의 경우 max_length 를 입력해야 한다.</p>
 <li>$ python manage.py check 명령을 통해 마이그레이션을 수행하거나 데이터베이스를 건드리지 않고도 프로젝트의 문제를 확인 가능함</li>
 </ul>
 <h3 id="콘솔창에서-managepy-제어">콘솔창에서 manage.py 제어</h3>
-<p>python manage.py shell</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from polls.models import Choice, Question</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="no-questions-are-in-the-system-yet">No questions are in the system yet.</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Question.objects.all()
-&lt;QuerySet []&gt;</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="create-a-new-question">Create a new Question.</h1>
-<h1 id="support-for-time-zones-is-enabled-in-the-default-settings-file-so">Support for time zones is enabled in the default settings file, so</h1>
-<h1 id="django-expects-a-datetime-with-tzinfo-for-pub_date-use-timezonenow">Django expects a datetime with tzinfo for pub_date. Use timezone.now()</h1>
-<h1 id="instead-of-datetimedatetimenow-and-it-will-do-the-right-thing">instead of datetime.datetime.now() and it will do the right thing.</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from django.utils import timezone
-q = Question(question_text=&ldquo;What&rsquo;s new?&rdquo;, pub_date=timezone.now())</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="save-the-object-into-the-database-you-have-to-call-save-explicitly">Save the object into the database. You have to call save() explicitly.</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>q.save()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="now-it-has-an-id">Now it has an ID.</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>q.id
-1</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="access-model-field-values-via-python-attributes">Access model field values via Python attributes.</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>q.question_text
-&ldquo;What&rsquo;s new?&rdquo;
-q.pub_date
-datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="change-values-by-changing-the-attributes-then-calling-save">Change values by changing the attributes, then calling save().</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>q.question_text = &ldquo;What&rsquo;s up?&rdquo;
-q.save()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h1 id="objectsall-displays-all-the-questions-in-the-database">objects.all() displays all the questions in the database.</h1>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Question.objects.all()
-&lt;QuerySet [&lt;Question: Question object (1)&gt;]&gt;</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>(myvenv) C:\IT\Django&gt;python manage.py shell
-Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] on win32
-Type &ldquo;help&rdquo;, &ldquo;copyright&rdquo;, &ldquo;credits&rdquo; or &ldquo;license&rdquo; for more information.
-(InteractiveConsole)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from polls.models import Choice, Question
-Question.objects.all()
-&lt;QuerySet [&lt;Question: 지금 몇 시?&gt;]&gt;</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>$  python manage.py shell</p>
+<pre><code> &gt;&gt;&gt; from polls.models import Choice, Question  
 
+# No questions are in the system yet.
+&gt;&gt;&gt; Question.objects.all()
+&lt;QuerySet []&gt;
+
+# Create a new Question.
+# Support for time zones is enabled in the default settings file, so
+# Django expects a datetime with tzinfo for pub_date. Use timezone.now()
+# instead of datetime.datetime.now() and it will do the right thing.
+&gt;&gt;&gt; from django.utils import timezone
+&gt;&gt;&gt; q = Question(question_text=&quot;What's new?&quot;, pub_date=timezone.now())
+
+# Save the object into the database. You have to call save() explicitly.
+&gt;&gt;&gt; q.save()
+
+# Now it has an ID.
+&gt;&gt;&gt; q.id
+1
+
+# Access model field values via Python attributes.
+&gt;&gt;&gt; q.question_text
+&quot;What's new?&quot;
+&gt;&gt;&gt; q.pub_date
+datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=&lt;UTC&gt;)
+
+# Change values by changing the attributes, then calling save().
+&gt;&gt;&gt; q.question_text = &quot;What's up?&quot;
+&gt;&gt;&gt; q.save()
+
+# objects.all() displays all the questions in the database.
+&gt;&gt;&gt; Question.objects.all()
+&lt;QuerySet [&lt;Question: Question object (1)&gt;]&gt;
+
+
+
+(myvenv) C:\IT\Django&gt;python manage.py shell
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+(InteractiveConsole)
+&gt;&gt;&gt; from polls.models import Choice, Question
+&gt;&gt;&gt; Question.objects.all()
+&lt;QuerySet [&lt;Question: 지금 몇 시?&gt;]&gt;
+</code></pre>
 	</div>
 	
 	
