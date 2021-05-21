@@ -6,10 +6,23 @@
 		<description>Recent content in Posts on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Fri, 14 May 2021 09:18:42 +0900</lastBuildDate>
+		<lastBuildDate>Fri, 21 May 2021 10:10:33 +0900</lastBuildDate>
 		
 		<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치</title>
+			<link>/post/20210521.html</link>
+			<pubDate>Fri, 21 May 2021 10:10:33 +0900</pubDate>
+			
+			<guid>/post/20210521.html</guid>
+			<description>
+			
+				https://docs.djangoproject.com/ko/3.2/intro/tutorial02/
+0. DB 모델 변경을 위한 세 단계  models.py 에서 모델을 변경 $ python manage.py makemigrations을 통해 이 변경 …
+			
+			</description>
+		</item>
 		<item>
 			<title>Django PollApp(설문조사 앱) 튜토리얼 - 1) 프로젝트 설치 </title>
 			<link>/post/20210514.html</link>

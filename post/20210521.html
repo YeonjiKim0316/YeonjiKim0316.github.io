@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	
+	<meta name="generator" content="Hugo 0.83.1" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta property="og:title" content="Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치">
+	
+	
+	<meta name="keywords" content="python,django"><meta property="og:title" content="Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치" />
+<meta property="og:description" content="https://docs.djangoproject.com/ko/3.2/intro/tutorial02/
+0. DB 모델 변경을 위한 세 단계  models.py 에서 모델을 변경 $ python manage.py makemigrations을 통해 이 변경사항에 대한 마이그레이션 만들기 python manage.py migrate 명령을 통해 변경사항을 데이터베이스에 적용   1. SQL Lite  장고는 Python이 기본적으로 제공하는 SQLlite라는 경량 데이터베이스를 제공한다.  2. settings.py  mysite/settings.py : Django 설정을 모듈 변수로 표현하는 곳  INSTALLED_APPS : 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름이 담겨 있다. 앱들은 다수의 프로젝트에서 사용될 수 있고, 다른 프로젝트에서 쉽게 사용될 수 있도록 패키징하여 배포할 수 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/20210521.html" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-21T10:10:33&#43;09:00" />
+<meta property="article:modified_time" content="2021-05-21T10:10:33&#43;09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치"/>
+<meta name="twitter:description" content="https://docs.djangoproject.com/ko/3.2/intro/tutorial02/
+0. DB 모델 변경을 위한 세 단계  models.py 에서 모델을 변경 $ python manage.py makemigrations을 통해 이 변경사항에 대한 마이그레이션 만들기 python manage.py migrate 명령을 통해 변경사항을 데이터베이스에 적용   1. SQL Lite  장고는 Python이 기본적으로 제공하는 SQLlite라는 경량 데이터베이스를 제공한다.  2. settings.py  mysite/settings.py : Django 설정을 모듈 변수로 표현하는 곳  INSTALLED_APPS : 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름이 담겨 있다. 앱들은 다수의 프로젝트에서 사용될 수 있고, 다른 프로젝트에서 쉽게 사용될 수 있도록 패키징하여 배포할 수 있다."/>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/all.css" />
+	<title>Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치 | PaperDoll - Today I Learnt</title>
+
+
+</head>
+<body><header>
+	
+	<div id="titletext"><h2 id="title"><a href="../">PaperDoll - Today I Learnt</a></h2></div>
+	<div id="title-description"><div id="social">
+			<nav>
+				<ul></ul>
+			</nav>
+		</div>
+	</div>
+	
+</header>
+<main><div class="post">
+	
+	<div class="author">
+	
+	</div>
+	<div class="post-header">
+	
+		<div class="meta">
+			
+			<div class="date">
+				<span class="day">21</span>
+				<span class="rest">May 2021</span>
+			</div>
+			
+		</div>
+		
+		<div class="matter">
+			<h1 class="title">Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치</h1>
+		</div>
+	</div>
+	<div class="markdown">
+		<p><a href="https://docs.djangoproject.com/ko/3.2/intro/tutorial02/">https://docs.djangoproject.com/ko/3.2/intro/tutorial02/</a></p>
+<h2 id="0-db-모델-변경을-위한-세-단계">0. DB 모델 변경을 위한 세 단계</h2>
+<ul>
+<li>models.py 에서 모델을 변경</li>
+<li>$ python manage.py makemigrations을 통해 이 변경사항에 대한 마이그레이션 만들기</li>
+<li>python manage.py migrate 명령을 통해 변경사항을 데이터베이스에 적용</li>
+</ul>
+<hr>
+<h2 id="1-sql-lite">1. SQL Lite</h2>
+<ul>
+<li>장고는 Python이 기본적으로 제공하는 SQLlite라는 경량 데이터베이스를 제공한다.</li>
+</ul>
+<h2 id="2-settingspy">2. settings.py</h2>
+<ul>
+<li>mysite/settings.py : Django 설정을 모듈 변수로 표현하는 곳
+<ul>
+<li>INSTALLED_APPS : 현재 Django 인스턴스에서 활성화된 모든 Django 어플리케이션들의 이름이 담겨 있다. 앱들은 다수의 프로젝트에서 사용될 수 있고, 다른 프로젝트에서 쉽게 사용될 수 있도록 패키징하여 배포할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-1-installed_apps">2-1. INSTALLED_APPS</h3>
+<p>INSTALLED_APPS는 Django와 함께 딸려오는 다음의 앱들을 기본으로 포함힌다.</p>
+<pre><code>    django.contrib.admin – 관리자용 사이트
+    django.contrib.auth – 인증 시스템
+    django.contrib.contenttypes – 컨텐츠 타입을 위한 프레임워크
+    django.contrib.sessions – 세션 프레임워크
+    django.contrib.messages – 메세징 프레임워크
+    django.contrib.staticfiles – 정적 파일을 관리하는 프레임워크
+
+</code></pre><h3 id="2-2-databases">2-2. DATABASES</h3>
+<ul>
+<li>다른 데이터베이스를 사용해보고 싶다면, 적절한 데이터베이스 바인딩을 설치하고, settings.py에서 데이터베이스 연결 설정과 맞게끔 DATABASES &lsquo;default&rsquo; 항목의 값을 다음의 키 값으로 바꿔주면 된다.</li>
+</ul>
+<pre><code>ENGINE – 'django.db.backends.sqlite3', 'django.db.backends.postgresql', 'django.db.backends.mysql', 또는 'django.db.backends.oracle'
+</code></pre><h2 id="3-managepy---migrate--테이블-만들기">3. manage.py - migrate : 테이블 만들기</h2>
+<ul>
+<li>
+<p>migration들을 실행시켜주고, 자동으로 데이터베이스 스키마를 관리해주는 migrate 명령어</p>
+</li>
+<li>
+<p>아직 적용되지 않은 마이그레이션을 모두 수집해 이를 실행하며(Django는 django_migrations 테이블을 두어 마이그레이션 적용 여부를 추적한다) 이 과정을 통해 모델에서의 변경 사항들과 데이터베이스의 스키마의 동기화가 이루어진다.</p>
+</li>
+<li>
+<p>기본 어플리케이션들 중 몇몇은 최소한 하나 이상의 데이터베이스 테이블을 사용하는데, 그러기 위해서는 데이터베이스에서 테이블을 미리 만들 필요가 있다.</p>
+</li>
+<li>
+<p>migrate 명령은 INSTALLED_APPS 에 등록된 어플리케이션에 한하여 실행된다.</p>
+</li>
+<li>
+<p>기본으로 제공되는 어플리케이션은 일반적인 상황을 염두에 두었으나, 모두에게 필요한 것은 아니다. 만약 이것들이 필요 없다고 생각될 때는, migrate 를 실행하기 전에 INSTALLED_APPS 에서 제거할 어플리케이션들을 그냥 주석처리(comment-out) 하시거나 삭제하면 됨.</p>
+</li>
+</ul>
+<p>$ python manage.py migrate</p>
+<ul>
+<li>설문조사 앱을 만들 때는 Question / Choice라는 2개 테이블을 만든다.</li>
+<li>Question에는 question / publication date, Choice에는 choice_text(선택지)와 votes(투표수)라는 컬럼을 만든다. choice_text는 question을 참조한다.</li>
+</ul>
+<pre><code>from django.db import models
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)  //질문내용
+    pub_date = models.DateTimeField('date published')  //생성날짜
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)  //질문 : Question    데이터모델 참조하겠다
+    choice_text = models.CharField(max_length=200) //선택지
+    votes = models.IntegerField(default=0)   // 투표수
+
+</code></pre><p>하나의 question에 여러개 choice 가지고 있으므로 1:다 관계
+CharField 의 경우 max_length 를 입력해야 한다.</p>
+<p>##4. settings.py 편집 및 manage.py makemigrations polls 실행</p>
+<ul>
+<li>앱을 현재의 프로젝트에 포함시키기 위해서는, 앱의 구성 클래스에 대한 참조를 INSTALLED_APPS 설정에 추가해야 한다.</li>
+<li>PollsConfig 클래스는 polls/apps.py 파일 내에 존재한다. 점으로 구분된 경로는 &lsquo;polls.apps.PollsConfig&rsquo;가 된다.</li>
+<li>이 점으로 구분된 경로를, mysite/settings.py 파일을 편집하여 INSTALLED_APPS 설정에 추가하고 아래 명령어를 실행시킨다.</li>
+</ul>
+<p>$ python manage.py makemigrations polls</p>
+<p>makemigrations 을 실행시킴으로서, 모델이 생성, 변경된다.</p>
+<h2 id="추가--sqlmigrate-명령어-콘솔창에서-실행해보기">추가 : sqlmigrate 명령어 콘솔창에서 실행해보기</h2>
+<p>$ python manage.py sqlmigrate polls 0001</p>
+<ul>
+<li>sqlmigrate 명령은  migration이 내부적으로 실행하는 SQL 문장을 보여준다.</li>
+</ul>
+<h3 id="django의-테이블-생성-규칙">Django의 테이블 생성 규칙</h3>
+<ul>
+<li>테이블 이름은 앱의 이름과 모델의 이름(소문자)이 조합되어 자동으로 생성됨. (재지정 가능)</li>
+<li>기본 키(ID)가 자동으로 추가됨. (재지정 가능)</li>
+<li>관례에 따라, Django는 외래 키 필드명에 &ldquo;_id&rdquo; 이름을 자동으로 추가함.  (재지정 가능)</li>
+<li>사용하는 데이터베이스에 따라, 데이터베이스 고유의 필드타입이 조정됨. 자동 증가 필드를 생성할 경우 auto_increment(MySQL), serial(PostgreSQL), integer primary key autoincrement(SQLite)와 같이 사용하는 데이터베이스에 따라 적절한 필드타입이 자동으로 선택됨. 필드 명에 사용되는 인용부호도 상황에 따라 겹따옴표나 홑따옴표가 적절히 선택됨.</li>
+<li>$ python manage.py check 명령을 통해 마이그레이션을 수행하거나 데이터베이스를 건드리지 않고도 프로젝트의 문제를 확인 가능함</li>
+</ul>
+<h3 id="콘솔창에서-managepy-제어">콘솔창에서 manage.py 제어</h3>
+<p>python manage.py shell</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from polls.models import Choice, Question</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="no-questions-are-in-the-system-yet">No questions are in the system yet.</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Question.objects.all()
+&lt;QuerySet []&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="create-a-new-question">Create a new Question.</h1>
+<h1 id="support-for-time-zones-is-enabled-in-the-default-settings-file-so">Support for time zones is enabled in the default settings file, so</h1>
+<h1 id="django-expects-a-datetime-with-tzinfo-for-pub_date-use-timezonenow">Django expects a datetime with tzinfo for pub_date. Use timezone.now()</h1>
+<h1 id="instead-of-datetimedatetimenow-and-it-will-do-the-right-thing">instead of datetime.datetime.now() and it will do the right thing.</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from django.utils import timezone
+q = Question(question_text=&ldquo;What&rsquo;s new?&rdquo;, pub_date=timezone.now())</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="save-the-object-into-the-database-you-have-to-call-save-explicitly">Save the object into the database. You have to call save() explicitly.</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>q.save()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="now-it-has-an-id">Now it has an ID.</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>q.id
+1</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="access-model-field-values-via-python-attributes">Access model field values via Python attributes.</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>q.question_text
+&ldquo;What&rsquo;s new?&rdquo;
+q.pub_date
+datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="change-values-by-changing-the-attributes-then-calling-save">Change values by changing the attributes, then calling save().</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>q.question_text = &ldquo;What&rsquo;s up?&rdquo;
+q.save()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="objectsall-displays-all-the-questions-in-the-database">objects.all() displays all the questions in the database.</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Question.objects.all()
+&lt;QuerySet [&lt;Question: Question object (1)&gt;]&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>(myvenv) C:\IT\Django&gt;python manage.py shell
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] on win32
+Type &ldquo;help&rdquo;, &ldquo;copyright&rdquo;, &ldquo;credits&rdquo; or &ldquo;license&rdquo; for more information.
+(InteractiveConsole)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from polls.models import Choice, Question
+Question.objects.all()
+&lt;QuerySet [&lt;Question: 지금 몇 시?&gt;]&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="tags">
+		<div class="taxosfloating_left">
+			<p>Categories</p>
+		</div>
+		<div class="termsfloating_right">
+			<p>
+			
+			
+			
+			<a href="../categories/django/"> django </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</p>
+		</div>
+		<div class="clearit"></div>
+		
+		
+		
+		
+	
+	
+	
+	<div class="tags">
+		<div class="taxosfloating_left">
+			<p>Tags</p>
+		</div>
+		<div class="termsfloating_right">
+			<p>
+			
+			
+			
+			
+			
+			
+			
+			<a href="../tags/django/"> django </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a href="../tags/python/"> python </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</p>
+		</div>
+		<div class="clearit"></div>
+		
+		
+		
+		
+		
+	</div></div>
+
+  </main>
+
+
+
+
+
+</body>
+</html>
