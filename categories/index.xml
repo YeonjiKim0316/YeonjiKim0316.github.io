@@ -6,14 +6,14 @@
 		<description>Recent content in Categories on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Fri, 21 May 2021 10:10:33 +0900</lastBuildDate>
+		<lastBuildDate>Sat, 22 May 2021 15:53:13 +0900</lastBuildDate>
 		
 		<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Django</title>
 			<link>/categories/django.html</link>
-			<pubDate>Fri, 21 May 2021 10:10:33 +0900</pubDate>
+			<pubDate>Sat, 22 May 2021 15:53:13 +0900</pubDate>
 			
 			<guid>/categories/django.html</guid>
 			<description>

@@ -6,10 +6,23 @@
 		<description>Recent content in Django on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Fri, 21 May 2021 10:10:33 +0900</lastBuildDate>
+		<lastBuildDate>Sat, 22 May 2021 15:53:13 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/django/index.xml" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Django 튜토리얼 - PollApp(설문조사 앱) 3) admin(관리자) 페이지 추가</title>
+			<link>/post/210522.html</link>
+			<pubDate>Sat, 22 May 2021 15:53:13 +0900</pubDate>
+			
+			<guid>/post/210522.html</guid>
+			<description>
+			
+				https://docs.djangoproject.com/ko/3.2/intro/tutorial02/
+ Django는 모델에 대한 관리용 인터페이스를 모두 자동으로 생성합 이는 방문자를 위한 것이 아니라, 사이트 관리자를 위한 것!  py …
+			
+			</description>
+		</item>
 		<item>
 			<title>Django 튜토리얼 - PollApp(설문조사 앱) 2) 데이터베이스 설치</title>
 			<link>/post/20210521.html</link>

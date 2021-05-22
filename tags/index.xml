@@ -6,14 +6,14 @@
 		<description>Recent content in Tags on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Fri, 21 May 2021 10:10:33 +0900</lastBuildDate>
+		<lastBuildDate>Sat, 22 May 2021 15:53:13 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Django</title>
 			<link>/tags/django.html</link>
-			<pubDate>Fri, 21 May 2021 10:10:33 +0900</pubDate>
+			<pubDate>Sat, 22 May 2021 15:53:13 +0900</pubDate>
 			
 			<guid>/tags/django.html</guid>
 			<description>
@@ -25,7 +25,7 @@
 		<item>
 			<title>python</title>
 			<link>/tags/python.html</link>
-			<pubDate>Fri, 21 May 2021 10:10:33 +0900</pubDate>
+			<pubDate>Sat, 22 May 2021 15:53:13 +0900</pubDate>
 			
 			<guid>/tags/python.html</guid>
 			<description>
