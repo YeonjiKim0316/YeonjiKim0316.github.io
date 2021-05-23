@@ -6,10 +6,23 @@
 		<description>Recent content in python on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Sat, 22 May 2021 15:53:13 +0900</lastBuildDate>
+		<lastBuildDate>Sun, 23 May 2021 22:31:51 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가</title>
+			<link>/post/20210523.html</link>
+			<pubDate>Sun, 23 May 2021 22:31:51 +0900</pubDate>
+			
+			<guid>/post/20210523.html</guid>
+			<description>
+			
+				1. poll 앱 만들기  앱: 특정 기능만 수행하는 웹 어플리케이션  $ python manage.py startapp polls
+2. poll 앱의 view 만들기  뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지 …
+			
+			</description>
+		</item>
 		<item>
 			<title>Django 튜토리얼 - PollApp(설문조사 앱) 3) admin(관리자) 페이지 추가</title>
 			<link>/post/210522.html</link>

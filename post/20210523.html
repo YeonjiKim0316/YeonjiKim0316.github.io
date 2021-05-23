@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-	<meta property="og:title" content="20210523">
+	<meta property="og:title" content="Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가">
 	
 	
-	<meta property="og:title" content="20210523" />
+	<meta name="keywords" content="python,django,view,template"><meta property="og:title" content="Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가" />
 <meta property="og:description" content="1. poll 앱 만들기  앱: 특정 기능만 수행하는 웹 어플리케이션  $ python manage.py startapp polls
 2. poll 앱의 view 만들기  뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지의 한 종류  polls/views.py  view는 클라이언트로부터 request를 받고 HttpResponse를 돌려준다.  def index(request): 이 사이에 무슨 행위 할건지 쓰면 됩니다 return HttpResponse(&quot;Hello, world.&quot;) 예시
 from django.shortcuts import render from django.http import HttpResponse def index(request): return HttpResponse(&quot;Hello, world.&quot;) def detail(request, question_id): return HttpResponse(&quot;You&#39;re looking at the results of question %s." />
@@ -19,7 +19,7 @@ from django.shortcuts import render from django.http import HttpResponse def ind
 <meta property="article:modified_time" content="2021-05-23T22:31:51&#43;09:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="20210523"/>
+<meta name="twitter:title" content="Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가"/>
 <meta name="twitter:description" content="1. poll 앱 만들기  앱: 특정 기능만 수행하는 웹 어플리케이션  $ python manage.py startapp polls
 2. poll 앱의 view 만들기  뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지의 한 종류  polls/views.py  view는 클라이언트로부터 request를 받고 HttpResponse를 돌려준다.  def index(request): 이 사이에 무슨 행위 할건지 쓰면 됩니다 return HttpResponse(&quot;Hello, world.&quot;) 예시
 from django.shortcuts import render from django.http import HttpResponse def index(request): return HttpResponse(&quot;Hello, world.&quot;) def detail(request, question_id): return HttpResponse(&quot;You&#39;re looking at the results of question %s."/>
@@ -27,7 +27,7 @@ from django.shortcuts import render from django.http import HttpResponse def ind
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/all.css" />
-	<title>20210523 | PaperDoll - Today I Learnt</title>
+	<title>Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가 | PaperDoll - Today I Learnt</title>
 
 
 </head>
@@ -59,7 +59,7 @@ from django.shortcuts import render from django.http import HttpResponse def ind
 		</div>
 		
 		<div class="matter">
-			<h1 class="title">20210523</h1>
+			<h1 class="title">Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가</h1>
 		</div>
 	</div>
 	<div class="markdown">
@@ -136,6 +136,60 @@ def results(request, question_id):
 
 def vote(request, question_id):
     return HttpResponse(&quot;You're voting on question %s.&quot; % question_id)
+</code></pre><h1 id="upgrade-2-template-만들기">upgrade 2. template 만들기</h1>
+<ul>
+<li>
+<p>polls 디렉토리에 templates라는 디렉토리를 만들면 Django는 여기서 알아서 템플릿을 찾음.</p>
+</li>
+<li>
+<p>디렉토리 하단에 다시 polls라는 이름(앱이름)의 디렉토리를 만들고 이 안에서 작업한다. 안 그러면 장고가 다른 앱의 템플릿과 구분 못해서 못 찾음!!</p>
+</li>
+</ul>
+<h2 id="에러-처리">에러 처리</h2>
+<ul>
+<li>뷰는 요청된 질문의 ID 가 없을 경우 Http404 예외를 발생시킴.</li>
+</ul>
+<h2 id="pollstemplatespollsdetailhtml">polls/templates/polls/detail.html</h2>
+<pre><code>{{ question }}
+</code></pre><ul>
+<li>
+<p>수정 편하게 - URL 변경되는 경우 대비해 URL마다 네임 명시하기</p>
+</li>
+<li>
+<p>템플릿에서 하드코딩된 URL 제거하기</p>
+</li>
+</ul>
+<h2 id="pollsindexhtml">polls/index.html</h2>
+<pre><code>&lt;li&gt;&lt;a href=&quot;/polls/{{ question.id }}/&quot;&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+</code></pre><ul>
+<li>템플릿에 링크를 적으면, 이 링크는 위와 같이 부분적으로 하드코딩됨</li>
+<li>하드코딩된 접근방식의 문제는 변경시 수많은 템플릿을 가진 프로젝트들의 URL을 바꾸는 게 복잡해짐.</li>
+<li>그러나 polls.urls 모듈의 path() 함수에서 인수의 이름을 정의했으므로, {% url %} template 태그를 사용하여 url 설정에 정의된 특정한 URL 경로들의 의존성을 제거할 수 있음!</li>
+</ul>
+<h2 id="pollsindexhtml-1">polls/index.html</h2>
+<pre><code>&lt;li&gt;&lt;a href=&quot;{% url 'detail' question.id %}&quot;&gt;{{ question.question_text }}&lt;/a&gt;&lt;/li&gt;
+</code></pre><ul>
+<li>이 경우  polls.urls 모듈에 서술된 URL을 불러옴.</li>
+</ul>
+<h2 id="pollsurlspy-1">polls/urls.py</h2>
+<pre><code>...
+app_name = 'polls'
+</code></pre><ul>
+<li>다른 앱에서도 같은 이름을 사용할 수 있기 때문에 polls/urls.py 에도 지정해주어야 함!</li>
+</ul>
+<h2 id="pollstemplatespollsdetailhtml-1">polls/templates/polls/detail.html</h2>
+<ul>
+<li>템플릿에도 polls.detail로 주소 변경</li>
+</ul>
+<pre><code>{% if latest_question_list %}
+    &lt;ul&gt;
+    {% for question in latest_question_list %}
+        &lt;li&gt;&lt;a href=&quot;{% url 'polls.detail' question.id %}&quot;&gt;{{ question.question_text }} &lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+    &lt;/ul&gt;
+{% else %}
+        &lt;p&gt;No polls are available.&lt;/p&gt;    
+{% endif %}
 </code></pre>
 	</div>
 	
@@ -143,8 +197,162 @@ def vote(request, question_id):
 	
 	
 	
+	
+	
+	<div class="tags">
+		<div class="taxosfloating_left">
+			<p>Categories</p>
+		</div>
+		<div class="termsfloating_right">
+			<p>
+			
+			
+			
+			<a href="../categories/django/"> django </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</p>
+		</div>
+		<div class="clearit"></div>
+		
+		
+		
 		
 	
+	
+	
+	<div class="tags">
+		<div class="taxosfloating_left">
+			<p>Tags</p>
+		</div>
+		<div class="termsfloating_right">
+			<p>
+			
+			
+			
+			
+			
+			
+			
+			<a href="../tags/django/"> django </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a href="../tags/python/"> python </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a href="../tags/template/"> template </a>
+			
+			
+			
+			
+			
+			<a href="../tags/view/"> view </a>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</p>
+		</div>
+		<div class="clearit"></div>
+		
+		
+		
 		
 		
 	</div></div>
