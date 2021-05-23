@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	
+	<meta name="generator" content="Hugo 0.83.1" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta property="og:title" content="20210523">
+	
+	
+	<meta property="og:title" content="20210523" />
+<meta property="og:description" content="1. poll 앱 만들기  앱: 특정 기능만 수행하는 웹 어플리케이션  $ python manage.py startapp polls
+2. poll 앱의 view 만들기  뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지의 한 종류  polls/views.py  view는 클라이언트로부터 request를 받고 HttpResponse를 돌려준다.  def index(request): 이 사이에 무슨 행위 할건지 쓰면 됩니다 return HttpResponse(&quot;Hello, world.&quot;) 예시
+from django.shortcuts import render from django.http import HttpResponse def index(request): return HttpResponse(&quot;Hello, world.&quot;) def detail(request, question_id): return HttpResponse(&quot;You&#39;re looking at the results of question %s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/20210523.html" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-23T22:31:51&#43;09:00" />
+<meta property="article:modified_time" content="2021-05-23T22:31:51&#43;09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="20210523"/>
+<meta name="twitter:description" content="1. poll 앱 만들기  앱: 특정 기능만 수행하는 웹 어플리케이션  $ python manage.py startapp polls
+2. poll 앱의 view 만들기  뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지의 한 종류  polls/views.py  view는 클라이언트로부터 request를 받고 HttpResponse를 돌려준다.  def index(request): 이 사이에 무슨 행위 할건지 쓰면 됩니다 return HttpResponse(&quot;Hello, world.&quot;) 예시
+from django.shortcuts import render from django.http import HttpResponse def index(request): return HttpResponse(&quot;Hello, world.&quot;) def detail(request, question_id): return HttpResponse(&quot;You&#39;re looking at the results of question %s."/>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/all.css" />
+	<title>20210523 | PaperDoll - Today I Learnt</title>
+
+
+</head>
+<body><header>
+	
+	<div id="titletext"><h2 id="title"><a href="../">PaperDoll - Today I Learnt</a></h2></div>
+	<div id="title-description"><div id="social">
+			<nav>
+				<ul></ul>
+			</nav>
+		</div>
+	</div>
+	
+</header>
+<main><div class="post">
+	
+	<div class="author">
+	
+	</div>
+	<div class="post-header">
+	
+		<div class="meta">
+			
+			<div class="date">
+				<span class="day">23</span>
+				<span class="rest">May 2021</span>
+			</div>
+			
+		</div>
+		
+		<div class="matter">
+			<h1 class="title">20210523</h1>
+		</div>
+	</div>
+	<div class="markdown">
+		<h1 id="1-poll-앱-만들기">1. poll 앱 만들기</h1>
+<ul>
+<li>앱: 특정 기능만 수행하는 웹 어플리케이션</li>
+</ul>
+<p>$ python manage.py startapp polls</p>
+<h1 id="2-poll-앱의-view-만들기">2. poll 앱의 view 만들기</h1>
+<ul>
+<li>뷰는 Django 어플리케이션이 일반적으로 특정 기능과 템플릿을 제공하는 웹페이지의 한 종류</li>
+</ul>
+<h2 id="pollsviewspy">polls/views.py</h2>
+<ul>
+<li>view는 클라이언트로부터 request를 받고 HttpResponse를 돌려준다.</li>
+</ul>
+<pre><code>def index(request):
+    이 사이에 무슨 행위 할건지 쓰면 됩니다
+    return HttpResponse(&quot;Hello, world.&quot;)
+</code></pre><p>예시</p>
+<pre><code>from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse(&quot;Hello, world.&quot;)
+
+def detail(request, question_id):
+    return HttpResponse(&quot;You're looking at the results of question %s.&quot; % question_id)
+
+def results(request, question_id):
+    response = &quot;You're looking at the results of question %s.&quot;
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse(&quot;You're voting on question %s.&quot; % question_id)
+</code></pre><h2 id="pollsurlspy">polls/urls.py</h2>
+<ul>
+<li>이 경우 django가 인식할 수 있게 url에도 view에 관한 정보를 추가해줘야 한다.</li>
+</ul>
+<pre><code>from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    # ex: /polls/
+    path('', views.index, name='index'),
+    # ex: /polls/5/
+    path('&lt;int:question_id&gt;/', views.detail, name='detail'),
+    # ex: /polls/5/results/
+    path('&lt;int:question_id&gt;/results/', views.results, name='results'),
+    # ex: /polls/5/vote/
+    path('&lt;int:question_id&gt;/vote/', views.vote, name='vote'),
+]
+</code></pre><h1 id="3-upgrade-1-poll의-view를-좀더-섬세하게-만들어보기">3. upgrade 1: poll의 view를 좀더 섬세하게 만들어보기</h1>
+<h2 id="pollsviewspy-1">polls/views.py</h2>
+<pre><code># from django.shortcuts import render
+from django.http import HttpResponse
+
+from .models import Question
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_question_list])
+    return HttpResponse(output)
+# 출판일자를 통해 5개씩 qustion을 가져오겠다는 뜻
+# 뷰에서 페이지의 디자인이 하드코딩 되어 있을 때는 페이지가 보여지는 방식을 바꾸고 싶다면, 이 Python 코드를 편집해야만 힌다. Django에서는 이 부분을 템플릿으로 만들면, Python 코드로부터 디자인을 분리할 수 있다.
+
+def detail(request, question_id):
+    return HttpResponse(&quot;You're looking at the results of question %s.&quot; % question_id)
+
+def results(request, question_id):
+    response = &quot;You're looking at the results of question %s.&quot;
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse(&quot;You're voting on question %s.&quot; % question_id)
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+		
+	
+		
+		
+	</div></div>
+
+  </main>
+
+
+
+
+
+</body>
+</html>
