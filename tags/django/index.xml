@@ -6,10 +6,22 @@
 		<description>Recent content in Django on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Sun, 23 May 2021 22:31:51 +0900</lastBuildDate>
+		<lastBuildDate>Mon, 24 May 2021 21:07:29 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/django/index.xml" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Django 튜토리얼 - PollApp(설문조사 앱) 5) 폼 만들기</title>
+			<link>/post/20210524.html</link>
+			<pubDate>Mon, 24 May 2021 21:07:29 +0900</pubDate>
+			
+			<guid>/post/20210524.html</guid>
+			<description>
+			
+				3줄 요약  사용자가 준 정보를 서버로 가져오기 (회원가입, 주문 등) 클래스기반 뷰로 업그레이드! (이전까지는 함수 기반이었는데) 소스코드가 줄어든다. 기능은 같고 구현방식 차이만 있을 뿐  polls/detail.html <h1> {{ …</h1>
+			
+			</description>
+		</item>
 		<item>
 			<title>Django 튜토리얼 - PollApp(설문조사 앱) 4) view, template 추가</title>
 			<link>/post/20210523.html</link>
