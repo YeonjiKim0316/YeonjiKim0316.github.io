@@ -6,10 +6,23 @@
 		<description>Recent content on </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Mon, 24 May 2021 21:07:29 +0900</lastBuildDate>
+		<lastBuildDate>Thu, 27 May 2021 10:28:25 +0900</lastBuildDate>
 		
 		<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Django 튜토리얼 - PollApp(설문조사 앱) 6) 테스트코드 작성</title>
+			<link>/post/20210527.html</link>
+			<pubDate>Thu, 27 May 2021 10:28:25 +0900</pubDate>
+			
+			<guid>/post/20210527.html</guid>
+			<description>
+			
+				0. 왜 테스트코드가 필요한가  계속 변경되니까 협업하니까  테스트를 만들어야하는 이유
+ 시간 절약 가능 : 수십개 컴포넌트 엮이면 일일히 확인 어려움 테스트는 문제를 그저 식별하는 것이 아니라 예방합니다. 테스트가 코드를 더 매력적으로 만듭니다. 테 …
+			
+			</description>
+		</item>
 		<item>
 			<title>Django 튜토리얼 - PollApp(설문조사 앱) 5) 폼 만들기</title>
 			<link>/post/20210524.html</link>
